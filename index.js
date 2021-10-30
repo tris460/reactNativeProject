@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import Flex from './src/components/flex';
+import FlexDirectionBasics from './src/components/flexDirection';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Flex);
+AppRegistry.registerComponent(appName, () => FlexDirectionBasics);
