@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import PercentageDimensionsBasics from './src/components/percentageDimensions';
+import Flex from './src/components/flex';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => PercentageDimensionsBasics);
+AppRegistry.registerComponent(appName, () => Flex);
