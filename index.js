@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import DirectionLayout from './src/components/layoutDirection';
+import JustifyContentBasics from './src/components/justifyContent';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => DirectionLayout);
+AppRegistry.registerComponent(appName, () => JustifyContentBasics);
