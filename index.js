@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import AlignSelfLayout from './src/components/alignSelf'
+import AlignContentLayout from './src/components/alignContent';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => AlignSelfLayout);
+AppRegistry.registerComponent(appName, () => AlignContentLayout);
