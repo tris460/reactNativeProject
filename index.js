@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import FlexWrapLayout from './src/components/flexWrap';
+import App from './src/components/flexBGS';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => FlexWrapLayout);
+AppRegistry.registerComponent(appName, () => App);
