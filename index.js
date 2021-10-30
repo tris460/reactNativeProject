@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import FixedDimensionsBasics from './src/components/fixedDimensions';
+import FlexDimensionsBasics from './src/components/flexDimensions';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => FixedDimensionsBasics);
+AppRegistry.registerComponent(appName, () => FlexDimensionsBasics);
