@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import WidthHeightBasics from './src/components/widthHeight';
+import alertWithInfo from './src/components/alertWithInfo';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => WidthHeightBasics);
+AppRegistry.registerComponent(appName, () => alertWithInfo);
