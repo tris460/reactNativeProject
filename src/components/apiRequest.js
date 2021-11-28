@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Text, Alert, ImageBackground, TextInput, Button } from "react-native";
 import axios from 'axios';
 
@@ -7,24 +7,24 @@ const apiRequest = () => {
         lat: 21.87202038522148,
         lon: -102.29439220883894 
     }
-    data = {
-        name: '',
-        country: '',
-        localtime: '',
-        temperature: '',
-        weather: '',
-    }
+    const [name, setName] = useState(0);
+    const [country, setCountry] = useState(0);
+    const [localtime, setLocaltime] = useState(0);
+    const [temp, setTemp] = useState(0);
+    const [weather, setWeather] = useState(0);
+    const [ico, setIco] = useState('https://cdn.shopify.com/s/files/1/0254/9396/2849/products/fotomural-paisaje-soleado-Dekoadhesivo_1400x.jpg?v=1576518689');
+
     const getData = (lat, lon) => {
         axios
-            .get(`http://api.weatherstack.com/current?access_key=&query=${lat},${lon}`)
+            .get(`http://api.weatherstack.com/current?access_key=9686c48dcff609c13be49e50f64b968a&query=${lat},${lon}`)
             .then(function (response) {
-                //Alert.alert(JSON.stringify(response.data.location.name));
-                this.data.name = response.data.location.name;
-                this.data.country = response.data.location.country;
-                this.data.localtime = response.data.location.localtime;
-                this.data.temperature = response.data.current.temperature;
-                this.data.weather = response.data.current.weather_descriptions[0];
-                
+                const result = response.data;
+                setName(result.location.name);
+                setCountry(result.location.country);
+                setLocaltime(result.location.localtime);
+                setTemp(result.current.temperature);
+                setWeather(result.current.weather_descriptions[0]);
+                setIco(result.current.weather_icons[0]);
             })
             .catch(function (error) {
                 Alert.alert(error);
@@ -34,8 +34,8 @@ const apiRequest = () => {
         <View style={styles.container}>
             <ImageBackground
                 style={styles.img}
-                resizeMode="cover"
-                source={{uri: 'https://cdn.shopify.com/s/files/1/0254/9396/2849/products/fotomural-paisaje-soleado-Dekoadhesivo_1400x.jpg?v=1576518689'}}
+                resizeMode="stretch"
+                source={{uri: ico}}
             >
                 <View style={styles.readData}>
                     <Text style={styles.title}>Get the weather from...</Text>
@@ -63,11 +63,11 @@ const apiRequest = () => {
                     />
                 </View>
                 <View>
-                    <Text style={styles.text}>Name: {this.data.name}</Text>
-                    <Text style={styles.text}>Country: {this.data.country}</Text>
-                    <Text style={styles.text}>Localtime: {this.data.localtime}</Text>
-                    <Text style={styles.text}>Temperature: {this.data.temperature}</Text>
-                    <Text style={styles.text}>Weather: {this.data.weather}</Text>
+                    <Text style={styles.text}>Name: {name}</Text>
+                    <Text style={styles.text}>Country: {country}</Text>
+                    <Text style={styles.text}>Localtime: {localtime}</Text>
+                    <Text style={styles.text}>Temperature: {temp}</Text>
+                    <Text style={styles.text}>Weather: {weather}</Text>
                 </View>
                 <Text style={styles.ownerText}>Beatriz Martínez Pérez</Text>
             </ImageBackground>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     },
     title: {
         textAlign: "center",
-        fontSize: 22,
+        fontSize: 24,
         color: "#fff",
         margin: 25,
     },
@@ -98,10 +98,10 @@ const styles = StyleSheet.create({
         backgroundColor: "#145489",
         position: "absolute",
         top: -1,
-        width: "100%"
+        width: "100%",
     },
     text: {
-        color: "#fff",
+        color: "#555",
         margin: 3,
         fontSize: 22,
     },
