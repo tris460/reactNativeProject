@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Image, TextInput, Button } from "react-native";
+import { StyleSheet, View, Image, TextInput, TouchableOpacity, Text } from "react-native";
 
 const login = () => {
     return (
@@ -16,11 +16,11 @@ const login = () => {
                 placeholder="Password"
                 password={true}
             />
-            <Button
+            <TouchableOpacity
                 style={styles.button}
-                title="LogIn"
-                color="#75c9bc"
-            ></Button>            
+            >
+                <Text style={styles.textButton}>Login</Text>    
+            </TouchableOpacity>            
         </View>
     );
 };
@@ -48,6 +48,17 @@ const styles = StyleSheet.create({
         borderRightColor: "#fff",
         fontSize: 20,
     },
+    button: {
+        backgroundColor: "#75c9bc",
+        margin: 10,
+        padding: 15,
+        borderRadius: 10,
+        alignItems: "center"
+    },
+    textButton: {
+        fontSize: 18,
+        color: "#fff"
+    }
 });
 
 export default login;
