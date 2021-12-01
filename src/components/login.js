@@ -1,8 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Image, TextInput, Button } from "react-native";
-import { Icon } from 'react-native-elements';
 
-const infoTech = () => {
+const login = () => {
     return (
         <View style={styles.container}>
             <Image 
@@ -16,10 +15,6 @@ const infoTech = () => {
                 style={styles.input}
                 placeholder="Password"
                 password={true}
-                // rightIcon= {
-                //     type="material-comunity"
-                //     name=""
-                // }
             />
             <Button
                 style={styles.button}
@@ -55,4 +50,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default infoTech;
+export default login;
