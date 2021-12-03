@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Image, TouchableOpacity, Text } from "react-native";
 
-const menu = () => {
+const menu = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Image 
@@ -9,16 +9,25 @@ const menu = () => {
             source={require('../../assets/logo.jpeg')}></Image>
             <TouchableOpacity
                 style={styles.button}
+                onPress = {() => {
+                    navigation.navigate('Products')
+                }}
             >
                 <Text style={styles.textButton}>Products in stock</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.button}
+                onPress = {() => {
+                    navigation.navigate('Edit Product')
+                }}
             >
                 <Text style={styles.textButton}>Edit products</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.button}
+                onPress = {() => {
+                    navigation.navigate('About')
+                }}
             >
                 <Text style={styles.textButton}>About</Text>
             </TouchableOpacity>

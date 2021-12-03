@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Image, TextInput, TouchableOpacity, Text } from "react-native";
 
-const editProduct = () => {
+const editProduct = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Image 

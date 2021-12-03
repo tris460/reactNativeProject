@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
 
-const about = () => {
+const about = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Image 

@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Image, TextInput, TouchableOpacity, Text } from "react-native";
 
-const login = () => {
+const login = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Image 
@@ -18,6 +18,9 @@ const login = () => {
             />
             <TouchableOpacity
                 style={styles.button}
+                onPress = {() => {
+                    navigation.navigate('Menu')
+                }}
             >
                 <Text style={styles.textButton}>Login</Text>    
             </TouchableOpacity>            
