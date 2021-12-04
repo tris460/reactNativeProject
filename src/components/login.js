@@ -23,7 +23,7 @@ const login = ({ navigation }) => {
                 }}
             >
                 <Text style={styles.textButton}>Login</Text>    
-            </TouchableOpacity>            
+            </TouchableOpacity>             
         </View>
     );
 };
