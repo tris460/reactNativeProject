@@ -7,7 +7,7 @@ const editProduct = ({ navigation }) => {
             <View style={styles.container}>
                 <Image 
                 style={styles.logo} 
-                source={require('../../assets/logo.jpeg')}></Image>
+                source={require('../../assets/logo.png')}></Image>
                 <Text style={styles.textTitle}>Fruit Information</Text>
                 <Text style={styles.text}>Genus</Text>
                 <TextInput
@@ -87,15 +87,15 @@ const styles = StyleSheet.create({
         margin: 10,
         marginTop: 0,
         borderWidth: 2,
-        borderBottomColor: "#CAE2FE",
-        borderLeftColor: "#CAE2FE",
+        borderBottomColor: "#1e6d65",
+        borderLeftColor: "#1e6d65",
         borderTopColor: "#fff",
         borderRightColor: "#fff",
         fontSize: 16,
         padding: 3,
     },
     button: {
-        backgroundColor: "#CAE2FE",
+        backgroundColor: "#1e6d65",
         margin: 10,
         padding: 15,
         borderRadius: 10,

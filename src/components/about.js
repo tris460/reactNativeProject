@@ -6,7 +6,7 @@ const about = ({ navigation }) => {
         <View style={styles.container}>
             <Image 
             style={styles.logo} 
-            source={require('../../assets/logo.jpeg')}></Image>
+            source={require('../../assets/logo.png')}></Image>
             <Text style={styles.textName}>Beatriz Martínez Pérez</Text>
             <Text style={styles.textID}>190343</Text>
             <Text style={styles.group}>4°B</Text>

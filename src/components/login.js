@@ -7,7 +7,7 @@ const login = ({ navigation }) => {
             <View style={styles.container}>
                 <Image 
                 style={styles.logo} 
-                source={require('../../assets/logo.jpeg')}></Image>
+                source={require('../../assets/logo.png')}></Image>
                 <TextInput
                     style={styles.input}
                     placeholder="E-mail"
@@ -49,14 +49,14 @@ const styles = StyleSheet.create({
         marginRight: 10,
         marginTop: 5,
         borderWidth: 2,
-        borderBottomColor: "#CAE2FE",
-        borderLeftColor: "#CAE2FE",
+        borderBottomColor: "#1e6d65",
+        borderLeftColor: "#1e6d65",
         borderTopColor: "#fff",
         borderRightColor: "#fff",
         fontSize: 20,
     },
     button: {
-        backgroundColor: "#CAE2FE",
+        backgroundColor: "#1e6d65",
         margin: 10,
         padding: 15,
         borderRadius: 10,

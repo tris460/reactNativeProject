@@ -6,7 +6,7 @@ const menu = ({ navigation }) => {
         <View style={styles.container}>
             <Image 
             style={styles.logo} 
-            source={require('../../assets/logo.jpeg')}></Image>
+            source={require('../../assets/logo.png')}></Image>
             <TouchableOpacity
                 style={styles.button}
                 onPress = {() => {
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     button: {
-        backgroundColor: "#CAE2FE",
+        backgroundColor: "#1e6d65",
         margin: 10,
         padding: 18,
         borderRadius: 10,

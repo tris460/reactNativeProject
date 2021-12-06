@@ -1,71 +1,87 @@
-import React from "react";
-import { StyleSheet, View, Image, Text, ScrollView } from "react-native";
+import React, {useEffect, useState} from 'react';
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  Pressable,
+  Image,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const products = ({ navigation }) => {
+export default function App() {
+    const [fruits, setFruits] = useState([]);
+    const [expandedIndex, setExpandedIndex] = useState(-1);
+    const fetchFruits = () => {
+      fetch('https://www.fruityvice.com//api/fruit/all', {method: 'GET'})
+        .then(resp => resp.json())
+        .then(newFruits => setFruits(newFruits));
+    };
+    useEffect(() => {
+      fetchFruits();
+    }, []);
+    const renderFruit = ({item: fruitItem, index}) => {
+      const {carbohydrates, protein, fat, calories, sugar} = fruitItem.nutritions;
+      return (
+        <Pressable
+        onPress={() =>
+          expandedIndex === index
+          ? setExpandedIndex(-1)
+          : setExpandedIndex(index)
+        }>
+          <View style={styles.fruitContainer}>
+            <Text style={[styles.fruitName, styles.regularText]}>
+              Name: {fruitItem.name}
+            </Text>
+            <Text style={styles.regularText}>Family: {fruitItem.family}</Text>
+            {expandedIndex === index && (
+              <Text style={styles.regularText}>
+                Carbohydrates: {carbohydrates}g, Protein:{' '}
+                {protein}g, Calories: {calories}g, Sugar:{' '}
+                {sugar}g, Fat: {fat}g
+              </Text>
+            )}
+          </View>
+        </Pressable>
+      );
+    };
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <Image 
-                style={styles.logo} 
-                source={require('../../assets/logo.jpeg')}></Image>
-                <View style={styles.container}>
-                    <View style={styles.productContainer}>
-                        <View style={styles.imgProduct}>
-                            <Image style={styles.image} source={{uri: 'https://tse3.mm.bing.net/th?id=OIP.a46KCUdEuRQPp-DIrUegTAHaFj&pid=Api'}}></Image>
-                        </View>
-                        <View style={styles.textProduct}>
-                            <Text style={styles.text, styles.textName}>Product Name</Text>
-                            <Text style={styles.text, styles.price}>Price</Text>
-                            <Text style={styles.text, styles.description}>Description</Text>
-                        </View>
-                    </View>
-                </View>
-            </View>
-        </ScrollView>
-    )
-}
-
-const styles = StyleSheet.create({
+      <SafeAreaView style={styles.container}>      
+      <Image 
+        style={styles.logo} 
+        source={require('../../assets/logo.png')}></Image>
+        <FlatList
+          keyExtractor={item => item.name}
+          data={fruits}
+          renderItem={renderFruit}
+        />
+      </SafeAreaView>
+    );
+  }
+  const styles = StyleSheet.create({
     container: {
-        height: "100%",
-        width: "100%",
-        flex: 1,
-        backgroundColor: "#fff",
-    },
-    productContainer: {
-        margin: 5,
-        padding: 3,
-        flexWrap: "wrap",
-        maxHeight: 100,
-        borderColor: "#CAE2FE",
-        borderRadius: 5,
-        borderWidth: 2
+      flex: 1,
+      padding: 10,
+      backgroundColor: '#fff',
     },
     logo: {
-        width: 130,
-        height: 130,
-        alignSelf: 'center',
-        marginTop: 15,
+      width: 130,
+      height: 130,
+      alignSelf: 'center',
+      marginTop: 15,
     },
-    imgProduct: {
-        width: 130,
-        height: 100,
-        marginLeft: 5
+    fruitContainer: {
+      margin: 5,
+      shadowRadius: 20,
+      shadowColor: '#fff',
+      shadowOffset: {width: 10, height: 10},
     },
-    image: {
-        height: '70%',
-        width: '70%'
-    }, 
-    textProduct: {},
-    textName: {
-        fontSize: 18,
-        color: "#333",
+    fruitName: {
+      color: '#111111',
+      fontSize: 16,
     },
-    price: {
-        fontSize: 15,
-        color: "#111",
+    regularText: {
+      color: '#000',
+      fontWeight: '600',
     },
-    description: {},
-})
-
-export default products;
+  });
