@@ -1,21 +1,26 @@
-import React from "react";
-import { StyleSheet, View, Image, TextInput, TouchableOpacity, Text, ScrollView, Alert } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View, Image, TextInput, Text, ScrollView, Alert, Button } from "react-native";
 
-const sendData = () => {
+const sendData = (genus, name, family, order, carb, protein, fat, calories, sugar) => {
+    carb = parseFloat(carb);
+    protein = parseFloat(protein);
+    fat = parseFloat(fat);
+    calories = parseFloat(calories);
+    sugar = parseFloat(sugar);
     const requestOptions = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            genus: "Fragar",
-            name: "Berry",
-            family: "Rosa",
-            order: "Rosal",
+            genus: genus,
+            name: name,
+            family: family,
+            order: order,
             nutritions: {
-              carbohydrates: 6.5,
-              protein: 0,
-              fat: 0.9,
-              calories: 19,
-              sugar: 6.4
+              carbohydrates: carb,
+              protein: protein,
+              fat: fat,
+              calories: calories,
+              sugar: sugar
             }
           })
     };
@@ -27,6 +32,15 @@ const sendData = () => {
 }
 
 const editProduct = ({ navigation }) => {
+    const [genus, setGenus] = useState(0);
+    const [name, setName] = useState(0);
+    const [family, setFamily] = useState(0);
+    const [order, setOrder] = useState(0);
+    const [carb, setCarb] = useState(0);
+    const [protein, setProtein] = useState(0);
+    const [fat, setFat] = useState(0);
+    const [calories, setCalories] = useState(0);
+    const [sugar, setSugar] = useState(0);
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -38,21 +52,25 @@ const editProduct = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. Malus"
+                    onChangeText={(text) => setGenus(text)}
                 />
                 <Text style={styles.text}>Name</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. Apple"
+                    onChangeText={(text) => setName(text)}
                 />
                 <Text style={styles.text}>Family</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. Rasaceae"
+                    onChangeText={(text) => setFamily(text)}
                 />
                 <Text style={styles.text}>Order</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. Rosales"
+                    onChangeText={(text) => setOrder(text)}
                 />
                 <Text style={styles.textTitle}>Nutritions</Text>
                 <Text style={styles.text}>Carbohydrates</Text>
@@ -60,37 +78,41 @@ const editProduct = ({ navigation }) => {
                     style={styles.input}
                     placeholder="Ex. 11.4"
                     keyboardType="numeric"
+                    onChangeText={(text) => setCarb(text)}
                 />
                 <Text style={styles.text}>Protein</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. 0.3"
                     keyboardType="numeric"
+                    onChangeText={(text) => setProtein(text)}
                 />
                 <Text style={styles.text}>Fat</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. 0.4"
                     keyboardType="numeric"
+                    onChangeText={(text) => setFat(text)}
                 />
                 <Text style={styles.text}>Calories</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. 52"
                     keyboardType="numeric"
+                    onChangeText={(text) => setCalories(text)}
                 />
                 <Text style={styles.text}>Sugar</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. 10.3"
                     keyboardType="numeric"
+                    onChangeText={(text) => setSugar(text)}
                 />
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={sendData()}
-                >
-                    <Text style={styles.textButton}>Add Product</Text>    
-                </TouchableOpacity>            
+                <Button
+                    title="Add product"
+                    color="#1e6d65"
+                    onPress={() => sendData(genus, name, family, order, carb, protein, fat, calories, sugar)}
+                />
             </View>
         </ScrollView>
     );
@@ -120,13 +142,6 @@ const styles = StyleSheet.create({
         borderRightColor: "#fff",
         fontSize: 16,
         padding: 3,
-    },
-    button: {
-        backgroundColor: "#1e6d65",
-        margin: 10,
-        padding: 15,
-        borderRadius: 10,
-        alignItems: "center"
     },
     textButton: {
         fontSize: 18,
