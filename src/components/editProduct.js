@@ -8,30 +8,57 @@ const editProduct = ({ navigation }) => {
                 <Image 
                 style={styles.logo} 
                 source={require('../../assets/logo.jpeg')}></Image>
+                <Text style={styles.textTitle}>Fruit Information</Text>
+                <Text style={styles.text}>Genus</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Product name"
+                    placeholder="Ex. Malus"
                 />
+                <Text style={styles.text}>Name</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Price"
+                    placeholder="Ex. Apple"
+                />
+                <Text style={styles.text}>Family</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Ex. Rasaceae"
+                />
+                <Text style={styles.text}>Order</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Ex. Rosales"
+                />
+                <Text style={styles.textTitle}>Nutritions</Text>
+                <Text style={styles.text}>Carbohydrates</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Ex. 11.4"
                     keyboardType="numeric"
                 />
+                <Text style={styles.text}>Protein</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Image"
+                    placeholder="Ex. 0.3"
+                    keyboardType="numeric"
                 />
+                <Text style={styles.text}>Fat</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Condition"
+                    placeholder="Ex. 0.4"
+                    keyboardType="numeric"
                 />
+                <Text style={styles.text}>Calories</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Category"
+                    placeholder="Ex. 52"
+                    keyboardType="numeric"
                 />
+                <Text style={styles.text}>Sugar</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Description"
+                    placeholder="Ex. 10.3"
+                    keyboardType="numeric"
                 />
                 <TouchableOpacity
                     style={styles.button}
@@ -60,14 +87,15 @@ const styles = StyleSheet.create({
         margin: 10,
         marginTop: 0,
         borderWidth: 2,
-        borderBottomColor: "#75c9bc",
-        borderLeftColor: "#75c9bc",
+        borderBottomColor: "#CAE2FE",
+        borderLeftColor: "#CAE2FE",
         borderTopColor: "#fff",
         borderRightColor: "#fff",
-        fontSize: 20,
+        fontSize: 16,
+        padding: 3,
     },
     button: {
-        backgroundColor: "#75c9bc",
+        backgroundColor: "#CAE2FE",
         margin: 10,
         padding: 15,
         borderRadius: 10,
@@ -76,6 +104,17 @@ const styles = StyleSheet.create({
     textButton: {
         fontSize: 18,
         color: "#fff"
+    },
+    textTitle: {
+        fontSize: 18,
+        marginLeft: 20,
+        color: "#222",
+        margin: 10,
+    },
+    text: {
+        fontSize: 15,
+        marginLeft: 15,
+        color: "#555",
     }
 });
 

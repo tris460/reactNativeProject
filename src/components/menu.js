@@ -13,7 +13,7 @@ const menu = ({ navigation }) => {
                     navigation.navigate('Products')
                 }}
             >
-                <Text style={styles.textButton}>Products in stock</Text>
+                <Text style={styles.textButton}>Fruit's Information</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.button}
@@ -21,7 +21,7 @@ const menu = ({ navigation }) => {
                     navigation.navigate('Edit Product')
                 }}
             >
-                <Text style={styles.textButton}>Edit products</Text>
+                <Text style={styles.textButton}>Add Fruit</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.button}
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     button: {
-        backgroundColor: "#75c9bc",
+        backgroundColor: "#CAE2FE",
         margin: 10,
         padding: 18,
         borderRadius: 10,

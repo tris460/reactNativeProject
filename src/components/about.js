@@ -7,14 +7,8 @@ const about = ({ navigation }) => {
             <Image 
             style={styles.logo} 
             source={require('../../assets/logo.jpeg')}></Image>
-            <Text style={styles.textName}>Ana María Pérez Escalante</Text>
-            <Text style={styles.textID}>190839</Text>
             <Text style={styles.textName}>Beatriz Martínez Pérez</Text>
             <Text style={styles.textID}>190343</Text>
-            <Text style={styles.textName}>Paola Cristina Rivas Esparza</Text>
-            <Text style={styles.textID}>190463</Text>
-            <Text style={styles.textName}>Christian Emmanuel Davis Castañeda</Text>
-            <Text style={styles.textID}>200131</Text>
             <Text style={styles.group}>4°B</Text>
             <Text style={styles.subject}>DAPPS</Text>
             <Image 
@@ -30,11 +24,11 @@ const styles = StyleSheet.create({
         width: "100%",
         flex: 1,
         backgroundColor: "#fff",
+        alignItems: 'center'
     },
     logo: {
         width: 150,
         height: 150,
-        alignSelf: 'center',
         marginTop: 20,
     },
     textName: {
@@ -58,7 +52,6 @@ const styles = StyleSheet.create({
     uni: {
         height: 100,
         width: 100,
-        alignSelf: 'center',
 
     },
 })

@@ -33,8 +33,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
     },
     productContainer: {
+        margin: 5,
+        padding: 3,
         flexWrap: "wrap",
         maxHeight: 100,
+        borderColor: "#CAE2FE",
+        borderRadius: 5,
+        borderWidth: 2
     },
     logo: {
         width: 130,
