@@ -1,5 +1,30 @@
 import React from "react";
-import { StyleSheet, View, Image, TextInput, TouchableOpacity, Text, ScrollView } from "react-native";
+import { StyleSheet, View, Image, TextInput, TouchableOpacity, Text, ScrollView, Alert } from "react-native";
+
+const sendData = () => {
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            genus: "Fragar",
+            name: "Berry",
+            family: "Rosa",
+            order: "Rosal",
+            nutritions: {
+              carbohydrates: 6.5,
+              protein: 0,
+              fat: 0.9,
+              calories: 19,
+              sugar: 6.4
+            }
+          })
+    };
+    fetch('https://www.fruityvice.com//api/fruit', requestOptions)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .then(response => Alert.alert('Success', 'The fruit sent will be reviewed and eventually be added to the database!'))
+            .catch(err => Alert.alert('A error have been occurred', err));
+}
 
 const editProduct = ({ navigation }) => {
     return (
@@ -62,6 +87,7 @@ const editProduct = ({ navigation }) => {
                 />
                 <TouchableOpacity
                     style={styles.button}
+                    onPress={sendData()}
                 >
                     <Text style={styles.textButton}>Add Product</Text>    
                 </TouchableOpacity>            
@@ -81,7 +107,8 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         marginTop: 20,
-        marginLeft: 20
+        marginLeft: 20,
+        alignSelf: 'center'
     },
     input: {
         margin: 10,
