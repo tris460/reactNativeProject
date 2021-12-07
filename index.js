@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import alertWithInfo from './src/components/alertWithInfo';
+import App from './App';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => alertWithInfo);
+AppRegistry.registerComponent(appName, () => App);
