@@ -10,7 +10,7 @@ const menu = ({ navigation }) => {
             <TouchableOpacity
                 style={styles.button}
                 onPress = {() => {
-                    navigation.navigate('Products')
+                    navigation.navigate('Fruits')
                 }}
             >
                 <Text style={styles.textButton}>Fruit's Information</Text>
@@ -18,7 +18,7 @@ const menu = ({ navigation }) => {
             <TouchableOpacity
                 style={styles.button}
                 onPress = {() => {
-                    navigation.navigate('Edit Product')
+                    navigation.navigate('Add Fruit')
                 }}
             >
                 <Text style={styles.textButton}>Add Fruit</Text>

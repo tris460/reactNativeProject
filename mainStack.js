@@ -22,11 +22,11 @@ const MainStack = () => {
                     component={ menu }
                 />
                 <Stack.Screen 
-                    name='Products'
+                    name='Fruits'
                     component={ products }
                 />
                 <Stack.Screen 
-                    name='Edit Product'
+                    name='Add Fruit'
                     component={ editProduct }
                 />
                 <Stack.Screen 
