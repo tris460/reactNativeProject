@@ -4,9 +4,11 @@ import { StyleSheet, View, Image, TouchableOpacity, Text } from "react-native";
 const menu = ({ navigation }) => {
     return (
         <View style={styles.container}>
+            {/* Element for the logo */}
             <Image 
             style={styles.logo} 
             source={require('../../assets/logo.png')}></Image>
+            {/* Button to go to the fruit's information */}
             <TouchableOpacity
                 style={styles.button}
                 onPress = {() => {
@@ -15,6 +17,7 @@ const menu = ({ navigation }) => {
             >
                 <Text style={styles.textButton}>Fruit's Information</Text>
             </TouchableOpacity>
+            {/* Button to go to add a fruit */}
             <TouchableOpacity
                 style={styles.button}
                 onPress = {() => {
@@ -23,6 +26,7 @@ const menu = ({ navigation }) => {
             >
                 <Text style={styles.textButton}>Add Fruit</Text>
             </TouchableOpacity>
+            {/* Button to go to about's screen */}
             <TouchableOpacity
                 style={styles.button}
                 onPress = {() => {
@@ -35,6 +39,7 @@ const menu = ({ navigation }) => {
     )
 }
 
+// Styles for the elements
 const styles = StyleSheet.create({
     container: {
         height: "100%",

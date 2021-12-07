@@ -4,13 +4,16 @@ import { StyleSheet, View, Image, Text } from "react-native";
 const about = ({ navigation }) => {
     return (
         <View style={styles.container}>
+            {/* Logo image */}
             <Image 
             style={styles.logo} 
             source={require('../../assets/logo.png')}></Image>
+            {/* Student information */}
             <Text style={styles.textName}>Beatriz Martínez Pérez</Text>
             <Text style={styles.textID}>190343</Text>
             <Text style={styles.group}>4°B</Text>
             <Text style={styles.subject}>DAPPS</Text>
+            {/* University logo */}
             <Image 
             style={styles.uni}
             source={{uri: 'https://ariaac.mx/wordpress/wp-content/uploads/2018/08/Universidad-Tecnol%C3%B3gica-de-Aguascalientes.jpg'}}></Image>
@@ -18,6 +21,7 @@ const about = ({ navigation }) => {
     )
 }
 
+// Styles for the elements
 const styles = StyleSheet.create({
     container: {
         height: "100%",
