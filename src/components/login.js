@@ -35,12 +35,14 @@ const login = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="E-mail"
+                    placeholderTextColor="#999"
                     onChangeText={(text) => setEmail(text)}
                 />
                 {/* Input for the password */}
                 <TextInput
                     style={styles.input}
                     placeholder="Password"
+                    placeholderTextColor="#999"
                     password={true}
                     secureTextEntry={true}
                     onChangeText={(text) => setPass(text)}
@@ -83,6 +85,7 @@ const styles = StyleSheet.create({
         borderTopColor: "#fff",
         borderRightColor: "#fff",
         fontSize: 20,
+        color: "#000"
     },
     button: {
         backgroundColor: "#1e6d65",

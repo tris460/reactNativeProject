@@ -62,6 +62,7 @@ const editProduct = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. Malus"
+                    placeholderTextColor="#999"
                     onChangeText={(text) => setGenus(text)}
                 />
                 
@@ -70,6 +71,7 @@ const editProduct = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. Apple"
+                    placeholderTextColor="#999"
                     onChangeText={(text) => setName(text)}
                 />
                 
@@ -78,6 +80,7 @@ const editProduct = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. Rasaceae"
+                    placeholderTextColor="#999"
                     onChangeText={(text) => setFamily(text)}
                 />
 
@@ -86,6 +89,7 @@ const editProduct = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. Rosales"
+                    placeholderTextColor="#999"
                     onChangeText={(text) => setOrder(text)}
                 />
 
@@ -96,6 +100,7 @@ const editProduct = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. 11.4"
+                    placeholderTextColor="#999"
                     keyboardType="numeric"
                     onChangeText={(text) => setCarb(text)}
                 />
@@ -105,6 +110,7 @@ const editProduct = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. 0.3"
+                    placeholderTextColor="#999"
                     keyboardType="numeric"
                     onChangeText={(text) => setProtein(text)}
                 />
@@ -114,6 +120,7 @@ const editProduct = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. 0.4"
+                    placeholderTextColor="#999"
                     keyboardType="numeric"
                     onChangeText={(text) => setFat(text)}
                 />
@@ -123,6 +130,7 @@ const editProduct = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. 52"
+                    placeholderTextColor="#999"
                     keyboardType="numeric"
                     onChangeText={(text) => setCalories(text)}
                 />
@@ -132,6 +140,7 @@ const editProduct = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Ex. 10.3"
+                    placeholderTextColor="#999"
                     keyboardType="numeric"
                     onChangeText={(text) => setSugar(text)}
                 />
@@ -170,6 +179,7 @@ const styles = StyleSheet.create({
         borderLeftColor: "#1e6d65",
         borderTopColor: "#fff",
         borderRightColor: "#fff",
+        color: '#000',
         fontSize: 16,
         padding: 3,
     },
