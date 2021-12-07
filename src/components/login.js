@@ -1,7 +1,27 @@
-import React from "react";
-import { StyleSheet, View, Image, TextInput, TouchableOpacity, Text, ScrollView } from "react-native";
+import React, {useState} from "react";
+import { StyleSheet, View, Image, TextInput, TouchableOpacity, Text, ScrollView, Alert } from "react-native";
+import axios from "axios";
 
 const login = ({ navigation }) => {
+    const [email, setEmail] = useState(0);
+    const [pass, setPass] = useState(0);
+    
+    const fetchUsers = (email, pass) => {
+        axios.get(`https://jsonplaceholder.typicode.com/users?email=${email}`)
+        .then(function (res) {
+            if(res.data.length > 0) {
+                if(pass == res.data[0].address.zipcode) {
+                    navigation.navigate('Menu');
+                } else {
+                    Alert.alert('Try again', 'Email or password incorrect');
+                }
+            } else {
+                Alert.alert('Try again', 'Email or password incorrect');
+            }
+        })
+        .catch(err => console.error(err));
+    }
+    
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -11,17 +31,19 @@ const login = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="E-mail"
+                    onChangeText={(text) => setEmail(text)}
                 />
                 <TextInput
                     style={styles.input}
                     placeholder="Password"
                     password={true}
                     secureTextEntry={true}
+                    onChangeText={(text) => setPass(text)}
                 />
                 <TouchableOpacity
                     style={styles.button}
                     onPress = {() => {
-                        navigation.navigate('Menu')
+                        fetchUsers(email, pass)
                     }}
                 >
                     <Text style={styles.textButton}>Login</Text>    

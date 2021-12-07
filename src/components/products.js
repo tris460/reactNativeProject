@@ -15,7 +15,8 @@ export default function App() {
     const fetchFruits = () => {
       fetch('https://www.fruityvice.com//api/fruit/all', {method: 'GET'})
         .then(resp => resp.json())
-        .then(newFruits => setFruits(newFruits));
+        .then(newFruits => setFruits(newFruits))
+        .catch(err => console.error(err));
     };
     useEffect(() => {
       fetchFruits();
